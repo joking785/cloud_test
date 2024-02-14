@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.enable": true, // нужен рестарт vs code
+  "eslint.enable": true,
+  "eslint.run": "onType"
+}
