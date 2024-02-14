@@ -3,5 +3,6 @@
   "editor.formatOnSave": true,
   "prettier.enable": true, // нужен рестарт vs code
   "eslint.enable": true,
-  "eslint.run": "onType"
+  "eslint.run": "onType",
+  "files.eol": "\n"
 }
