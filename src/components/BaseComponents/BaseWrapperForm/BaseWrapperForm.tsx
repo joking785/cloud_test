@@ -11,7 +11,14 @@ export const BaseWrapperForm = (props: BaseWrapperFormProps) => {
   return (
     <div className={cn(props.className, 'BaseWrapperForm')}>
       {props.children}
-      <Logo className="BaseWrapperForm_Logo" />
+      <a
+        className="LoginForm_link"
+        href="https://reliab.tech/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Logo className="BaseWrapperForm_Logo" />
+      </a>
     </div>
   );
 };
