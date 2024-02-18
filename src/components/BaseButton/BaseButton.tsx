@@ -18,9 +18,8 @@ export const BaseButton = (props: BaseButtonProps) => {
       disabled={props.disabled}
       className={cn(
         'BaseButton',
-        props.typeStyle === 'dark'
-          ? 'BaseButton--dark' // Получаем стиль кнопки
-          : props.className,
+        props.typeStyle === 'dark' ? 'BaseButton--dark' : 'BaseButton',
+        props.className,
       )}
     >
       {props.children}
