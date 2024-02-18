@@ -9,7 +9,7 @@
 
 .BaseButton--default {
   background: inherit;
-  color: white;
+  color: rgb(235, 229, 229);
 }
 
 .BaseButton--dark {
