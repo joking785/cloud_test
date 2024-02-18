@@ -1,14 +1,20 @@
+import React from 'react';
 import cn from 'classnames';
+import './style.css';
 export interface BaseButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   children?: React.ReactNode;
   disabled?: boolean;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
   className?: string;
-  typeStyle?: 'dark' | 'secondary';
+  typeStyle?: 'dark';
 }
 
 export const BaseButton = (props: BaseButtonProps) => {
+  console.log(
+    props.typeStyle === 'dark' ? 'BaseButton--dark' : 'BaseButton--default',
+  );
+
   return (
     <button
       onClick={(e) => props.onClick && props.onClick(e)}
@@ -24,3 +30,5 @@ export const BaseButton = (props: BaseButtonProps) => {
     </button>
   );
 };
+
+BaseButton.displayName = 'BaseButton';

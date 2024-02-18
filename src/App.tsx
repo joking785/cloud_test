@@ -1,5 +1,7 @@
+import { BaseButton } from './components/BaseButton';
+import React from 'react';
 function App() {
-  return null;
+  return <BaseButton typeStyle="dark">Зарегистрироваться</BaseButton>;
 }
 
 export default App;
