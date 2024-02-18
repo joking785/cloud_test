@@ -1,5 +1,3 @@
-import { BaseButton } from './components/BaseButton/BaseButton';
-
 function App() {
   return (
     <div className="App">
