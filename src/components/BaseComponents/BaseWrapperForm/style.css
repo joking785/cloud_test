@@ -1,0 +1,12 @@
+.BaseWrapperForm {
+  max-width: 1000px;
+  width: 100%;
+  background-color: #0072ff;
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
