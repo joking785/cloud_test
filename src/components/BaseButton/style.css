@@ -7,11 +7,6 @@
   cursor: pointer;
 }
 
-.BaseButton--default {
-  background: inherit;
-  color: rgb(235, 229, 229);
-}
-
 .BaseButton--dark {
   border-radius: 8px;
   color: white;

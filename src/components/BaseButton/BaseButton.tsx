@@ -11,10 +11,6 @@ export interface BaseButtonProps {
 }
 
 export const BaseButton = (props: BaseButtonProps) => {
-  console.log(
-    props.typeStyle === 'dark' ? 'BaseButton--dark' : 'BaseButton--default',
-  );
-
   return (
     <button
       onClick={(e) => props.onClick && props.onClick(e)}
@@ -22,8 +18,9 @@ export const BaseButton = (props: BaseButtonProps) => {
       disabled={props.disabled}
       className={cn(
         'BaseButton',
-        props.typeStyle === 'dark' ? 'BaseButton--dark' : 'BaseButton--default', // Получаем стиль кнопки
-        props.className,
+        props.typeStyle === 'dark'
+          ? 'BaseButton--dark' // Получаем стиль кнопки
+          : props.className,
       )}
     >
       {props.children}
