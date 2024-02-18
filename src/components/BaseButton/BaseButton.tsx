@@ -18,7 +18,7 @@ export const BaseButton = (props: BaseButtonProps) => {
       disabled={props.disabled}
       className={cn(
         'BaseButton',
-        props.typeStyle === 'dark' ? 'BaseButton--dark' : 'BaseButton',
+        props.typeStyle === 'dark' && 'BaseButton--dark',
         props.className,
       )}
     >
