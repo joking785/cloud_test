@@ -1,0 +1,25 @@
+.BaseButton {
+  margin: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.BaseButton--default {
+  background: inherit;
+  color: white;
+}
+
+.BaseButton--dark {
+  border-radius: 8px;
+  color: white;
+  background: black;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+}
