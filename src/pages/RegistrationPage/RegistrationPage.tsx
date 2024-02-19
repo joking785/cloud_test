@@ -24,7 +24,7 @@ export const RegistrationPage = () => {
           className="RegForm__form_input"
           value=""
           label="Пароль"
-          OuterComponent={<IconHint className="test" />}
+          OuterComponent={<IconHint className="RegForm__form_outerIcon" />}
         ></PasswordInput>
         <BaseInput
           className="RegForm__form_input"
