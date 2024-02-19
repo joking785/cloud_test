@@ -4,6 +4,7 @@ import { BaseInput } from '../../components/BaseComponents/BaseInput';
 import { BaseButton } from '../../components/BaseButton';
 import { Login } from '../../icons';
 import { Link } from 'react-router-dom';
+import { PasswordInput } from '../../components/PasswordInput';
 import './styles.css';
 
 export const LoginPage = () => {
@@ -18,7 +19,7 @@ export const LoginPage = () => {
             type="email"
             plaseholder="example@reliab.tech"
           />
-          <BaseInput
+          <PasswordInput
             className="LoginForm_input"
             type="password"
             InnerComponent={''}

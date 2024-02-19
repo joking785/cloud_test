@@ -1,20 +1,10 @@
-@supports (font-variation-settings: normal) {
-  :root {
-    font-family: InterVariable, sans-serif;
-  }
-}
-
 .LoginForm_container {
-  margin: auto;
   color: white;
-  vertical-align: middle;
   font-family: Inter, sans-serif;
-  font-feature-settings:
-    'liga' 1,
-    'calt' 1; /* fix for Chrome */
   font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 25%;
+  left: 25%;
 }
 
 .LoginForm_form {
