@@ -10,28 +10,20 @@ export const RegistrationPage = () => {
     <BaseWrapperForm className="RegForm">
       <form className="RegForm__form">
         <h1 className="RegForm__title">Регистрация</h1>
-        <BaseInput
-          className="RegForm__form_input"
-          value=""
-          label="Имя"
-        ></BaseInput>
-        <BaseInput
-          className="RegForm__form_input"
-          value=""
-          label="Фамилия"
-        ></BaseInput>
+        <BaseInput className="RegForm__form_input" value="" label="Имя" />
+        <BaseInput className="RegForm__form_input" value="" label="Фамилия" />
         <PasswordInput
           className="RegForm__form_input"
           value=""
           label="Пароль"
           OuterComponent={<IconHint className="RegForm__form_outerIcon" />}
-        ></PasswordInput>
+        />
         <BaseInput
           className="RegForm__form_input"
           value=""
           label="E-mail (корпоративный)"
           plaseholder="example@reliab.tech"
-        ></BaseInput>
+        />
         <BaseButton className="RegForm__buttonSubmit" typeStyle="dark">
           Зарегистрироваться
         </BaseButton>
