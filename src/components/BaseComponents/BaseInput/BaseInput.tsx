@@ -50,10 +50,11 @@ export const BaseInput = forwardRef<HTMLInputElement, BaseInputProps>(
           <div className="BaseInput_WrapInnerComponent">
             {props.InnerComponent}
           </div>
+          <div className="BaseInput_WrapOuterComponent">
+            {props.OuterComponent}
+          </div>
         </div>
-        <div className="BaseInput_WrapOuterComponent">
-          {props.OuterComponent}
-        </div>
+
         {props.helperText && (
           <p
             className={cn(
