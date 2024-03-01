@@ -12,8 +12,6 @@ export const validate = (e: React.FormEvent<HTMLInputElement>) => {
       break;
 
     case 'Фамилия':
-      console.log(13);
-
       e.currentTarget.value = e.currentTarget.value
         .trim()
         .toLowerCase()
@@ -25,8 +23,6 @@ export const validate = (e: React.FormEvent<HTMLInputElement>) => {
       break;
 
     case 'Пароль':
-      console.log(13);
-
       e.currentTarget.value = e.currentTarget.value
         .trim()
         .replace(/[^A-Za-z._\d-]+/g, '')
@@ -34,8 +30,6 @@ export const validate = (e: React.FormEvent<HTMLInputElement>) => {
       break;
 
     case 'E-mail':
-      console.log(13);
-
       e.currentTarget.value = e.currentTarget.value
         .trim()
         .replace(/([А-Яа-яЁё&=+<>,'&-])|(\.{2})/g, '');
@@ -44,9 +38,4 @@ export const validate = (e: React.FormEvent<HTMLInputElement>) => {
     default:
       break;
   }
-  //setDataValue((e.target as HTMLInputElement).value.trim());
-  // const nextVal = target.value;
-  // setDataValue(nextVal);
-  console.log(e.currentTarget.name);
-  // setDataValue(e.currentTarget.value);
 };
