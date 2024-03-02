@@ -1,10 +1,7 @@
 @font-face {
   font-family: 'IstokWeb';
+
   src:
-    local('IstokWeb'),
-    url('./fonts/IstokWeb-Bold.ttf') format('truetype');
-  font-weight: bold;
-}
-span {
-  font-family: 'IstokWeb';
+    local('IstokWeb-Regular'),
+    url('./fonts/IstokWeb-Regular.ttf') format('truetype');
 }
