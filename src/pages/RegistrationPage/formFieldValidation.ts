@@ -1,4 +1,4 @@
-export const chekBlure = (e: React.FormEvent<HTMLInputElement>) => {
+export const formFieldValidation = (e: React.FormEvent<HTMLInputElement>) => {
   const regexpFstAndLastSyb = /^[А-Я]+[а-я\-*/'*]+[а-я]+$/g;
   const regxpMaill = /@[reliab.tech]/g;
   switch (e.currentTarget.name) {

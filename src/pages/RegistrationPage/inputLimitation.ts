@@ -1,4 +1,4 @@
-export const validate = (e: React.FormEvent<HTMLInputElement>) => {
+export const inputLimitation = (e: React.FormEvent<HTMLInputElement>) => {
   switch (e.currentTarget.name) {
     case 'Имя':
       e.currentTarget.value = e.currentTarget.value

@@ -5,82 +5,85 @@ import { BaseWrapperForm } from '../../components/BaseComponents/BaseWrapperForm
 import { PasswordInput } from '../../components/PasswordInput';
 import { IconHint } from '../../icons';
 import './style.css';
-import { validate } from './validate';
-import { chekBlure } from './chekBlure';
+import { inputLimitation } from './inputLimitation';
+import { formFieldValidation } from './formFieldValidation';
 
 export const RegistrationPage = () => {
   const [errorText, setErrorText] = useState({
-    errorFirstname: '',
-    errorSecondname: '',
+    errorFirstName: '',
+    errorSecondName: '',
     errorPassword: '',
     errorEmail: '',
   });
   const [dataValue, setDataValue] = useState({
-    firstname: '',
-    secondname: '',
+    firstName: '',
+    secondName: '',
     password: '',
     email: '',
   });
-  const [isEror, setEror] = useState(false);
-
+  const [isError, setError] = useState(false);
   const handlerInput = (e: React.FormEvent<HTMLInputElement>) => {
-    validate(e);
+    inputLimitation(e);
     // const handlerValue = e.currentTarget.value;
     // return handlerValue;
   };
-  const blure = (e: React.FormEvent<HTMLInputElement>) => {
-    const f = chekBlure(e) ?? { error: false, text: '' };
-
+  const handlerBlure = (e: React.FormEvent<HTMLInputElement>) => {
+    const resultValidation = formFieldValidation(e) ?? {
+      error: false,
+      text: '',
+    };
     switch (e.currentTarget.name) {
       case 'Имя':
-        if (f.error === true) {
-          setErrorText({ ...errorText, errorFirstname: f.text });
-          setDataValue({ ...dataValue, firstname: '' });
+        if (resultValidation.error) {
+          setErrorText({ ...errorText, errorFirstName: resultValidation.text });
+          setDataValue({ ...dataValue, firstName: '' });
         } else {
-          setDataValue({ ...dataValue, firstname: e.currentTarget.value });
-          setErrorText({ ...errorText, errorFirstname: f.text });
+          setDataValue({ ...dataValue, firstName: e.currentTarget.value });
+          setErrorText({ ...errorText, errorFirstName: resultValidation.text });
         }
-
         break;
       case 'Фамилия':
-        if (f.error === true) {
-          setErrorText({ ...errorText, errorSecondname: f.text });
-          setDataValue({ ...dataValue, secondname: '' });
+        if (resultValidation.error) {
+          setErrorText({
+            ...errorText,
+            errorSecondName: resultValidation.text,
+          });
+          setDataValue({ ...dataValue, secondName: '' });
         } else {
-          setDataValue({ ...dataValue, secondname: e.currentTarget.value });
-          setErrorText({ ...errorText, errorSecondname: f.text });
+          setDataValue({ ...dataValue, secondName: e.currentTarget.value });
+          setErrorText({
+            ...errorText,
+            errorSecondName: resultValidation.text,
+          });
         }
-
         break;
       case 'Пароль':
-        if (f.error === true) {
-          setErrorText({ ...errorText, errorPassword: f.text });
+        if (resultValidation.error) {
+          setErrorText({ ...errorText, errorPassword: resultValidation.text });
           setDataValue({ ...dataValue, password: '' });
         } else {
           setDataValue({ ...dataValue, password: e.currentTarget.value });
-          setErrorText({ ...errorText, errorPassword: f.text });
+          setErrorText({ ...errorText, errorPassword: resultValidation.text });
         }
-
         break;
       case 'E-mail':
-        if (f.error === true) {
-          setErrorText({ ...errorText, errorEmail: f.text });
+        if (resultValidation.error) {
+          setErrorText({ ...errorText, errorEmail: resultValidation.text });
           setDataValue({ ...dataValue, email: '' });
         } else {
           setDataValue({ ...dataValue, email: e.currentTarget.value });
-          setErrorText({ ...errorText, errorEmail: f.text });
+          setErrorText({ ...errorText, errorEmail: resultValidation.text });
         }
-
         break;
     }
     if (
-      dataValue.firstname &&
-      dataValue.secondname &&
+      dataValue.firstName &&
+      dataValue.secondName &&
       dataValue.email &&
       dataValue.password
     ) {
-      setEror(false);
-    } else setEror(true);
+      setError(false);
+    } else setError(true);
     // chekBlure(e);
   };
 
@@ -93,18 +96,18 @@ export const RegistrationPage = () => {
           className="RegForm__form_input"
           label="Имя"
           onInput={handlerInput}
-          onBlur={blure}
-          helperText={errorText.errorFirstname}
-          isError={errorText.errorFirstname ? isEror : false}
+          onBlur={handlerBlure}
+          helperText={errorText.errorFirstName}
+          isError={!!errorText.errorFirstName}
         />
         <BaseInput
           name="Фамилия"
           className="RegForm__form_input"
           label="Фамилия"
           onInput={handlerInput}
-          onBlur={blure}
-          helperText={errorText.errorSecondname}
-          isError={errorText.errorSecondname ? isEror : false}
+          onBlur={handlerBlure}
+          helperText={errorText.errorSecondName}
+          isError={!!errorText.errorSecondName}
         />
         <PasswordInput
           name="Пароль"
@@ -112,9 +115,9 @@ export const RegistrationPage = () => {
           label="Пароль"
           OuterComponent={<IconHint className="RegForm__form_outerIcon" />}
           onInput={handlerInput}
-          onBlur={blure}
+          onBlur={handlerBlure}
           helperText={errorText.errorPassword}
-          isError={errorText.errorPassword ? isEror : false}
+          isError={!!errorText.errorPassword}
         />
         <BaseInput
           name="E-mail"
@@ -122,9 +125,9 @@ export const RegistrationPage = () => {
           label="E-mail (корпоративный)"
           plaseholder="example@reliab.tech"
           onInput={handlerInput}
-          onBlur={blure}
+          onBlur={handlerBlure}
           helperText={errorText.errorEmail}
-          isError={errorText.errorEmail ? isEror : false}
+          isError={!!errorText.errorEmail}
         />
         <BaseButton className="RegForm__buttonSubmit" typeStyle="dark">
           Зарегистрироваться
