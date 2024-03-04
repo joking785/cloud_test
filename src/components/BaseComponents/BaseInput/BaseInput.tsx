@@ -2,7 +2,7 @@ import React, { useId, forwardRef } from 'react';
 import cn from 'classnames';
 import './style.css';
 export interface BaseInputProps {
-  value: string;
+  value?: string;
   isError?: boolean;
   name?: string;
   label?: string;
