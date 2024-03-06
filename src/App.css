@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'IstokWeb';
+
+  src:
+    local('IstokWeb-Regular'),
+    url('./fonts/IstokWeb-Regular.ttf') format('truetype');
+}
