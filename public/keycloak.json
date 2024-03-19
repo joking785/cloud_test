@@ -1,0 +1,7 @@
+{
+  "realm": "master",
+  "auth-server-url": "https://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "cloud",
+  "public-client": true
+}

@@ -6,8 +6,8 @@ import Keycloack from 'keycloak-js';
 import { authHeader } from './services/auth-header';
 
 const initOptions = {
-  url: 'http://localhost:8080',
-  realm: 'master',
+  url: 'http://10.120.10.26:8080/ ',
+  realm: 'test',
   clientId: 'account',
 };
 

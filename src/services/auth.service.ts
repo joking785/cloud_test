@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080';
+const API_URL = 'http://10.120.10.26:8080/ ';
 
 export const register = (
   firstName: string,
