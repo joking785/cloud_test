@@ -157,3 +157,8 @@ h3 {
   border: 1px solid #c9c1c1;
   padding: 8px;
 }
+
+.LoginButton {
+  color: white;
+  margin-bottom: 0px;
+}

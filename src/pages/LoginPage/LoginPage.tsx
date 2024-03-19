@@ -6,6 +6,7 @@ import { Login } from '../../icons';
 import { Link } from 'react-router-dom';
 import { PasswordInput } from '../../components/PasswordInput';
 import './styles.css';
+import { login } from '../../services/auth.service';
 
 export const LoginPage = () => {
   return (
@@ -14,7 +15,6 @@ export const LoginPage = () => {
         <h1 className="LoginForm_title">Облачное хранилище ТН</h1>
         <div className="LoginForm_innerWrapForm">
           <BaseInput
-            value=""
             className="LoginForm_input"
             type="email"
             plaseholder="example@reliab.tech"
@@ -23,7 +23,6 @@ export const LoginPage = () => {
             className="LoginForm_input"
             type="password"
             InnerComponent={''}
-            value=""
             plaseholder="Пароль"
           />
           <div className="LoginForm_support">
@@ -34,7 +33,12 @@ export const LoginPage = () => {
               Забыли пароль?
             </Link>
           </div>
-          <BaseButton className="LoginButton">
+          <BaseButton
+            onClick={() => {
+              login;
+            }}
+            className="LoginButton"
+          >
             <Login />
           </BaseButton>
         </div>

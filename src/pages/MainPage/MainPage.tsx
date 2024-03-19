@@ -3,6 +3,7 @@ import { Login, Logo, Add, Share, Stash } from '../../icons';
 import { BaseInput } from '../../components/BaseComponents/BaseInput';
 import './styles.css';
 import { BaseButton } from '../../components/BaseButton';
+import { logout } from '../../services/auth.service';
 
 export const MainPage = () => {
   return (
@@ -10,7 +11,15 @@ export const MainPage = () => {
       <div className="MainPage_sidebar">
         <div className="MainPage_nameTitle">
           <h2>Милохин Кирилл</h2>
-          <Login />
+          <BaseButton
+            onClick={() => {
+              logout();
+            }}
+            className="LoginButton"
+          >
+            {' '}
+            <Login />
+          </BaseButton>
         </div>
         <ul className="MainPage_menu">
           <li>Мои файлы</li>
