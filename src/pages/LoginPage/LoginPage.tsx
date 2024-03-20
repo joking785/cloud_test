@@ -14,7 +14,6 @@ export const LoginPage = () => {
         <h1 className="LoginForm_title">Облачное хранилище ТН</h1>
         <div className="LoginForm_innerWrapForm">
           <BaseInput
-            value=""
             className="LoginForm_input"
             type="email"
             plaseholder="example@reliab.tech"
@@ -23,7 +22,6 @@ export const LoginPage = () => {
             className="LoginForm_input"
             type="password"
             InnerComponent={''}
-            value=""
             plaseholder="Пароль"
           />
           <div className="LoginForm_support">

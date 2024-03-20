@@ -3,10 +3,11 @@ import { BaseInput } from '../../components/BaseComponents/BaseInput';
 import { BaseButton } from '../../components/BaseButton';
 import { BaseWrapperForm } from '../../components/BaseComponents/BaseWrapperForm';
 import { PasswordInput } from '../../components/PasswordInput';
-import { IconHint } from '../../icons';
 import './style.css';
 import { inputLimitation } from './inputLimitation';
 import { formFieldValidation } from './formFieldValidation';
+import 'react-tooltip/dist/react-tooltip.css';
+import { IconHint } from '../../icons';
 
 export const RegistrationPage = () => {
   const [errorText, setErrorText] = useState({
@@ -87,6 +88,8 @@ export const RegistrationPage = () => {
     // chekBlure(e);
   };
 
+  const tooltipText =
+    'Пароль должен содержать от 8 до 20 символов. <br /> Только латинские буквы. <br /> Использования символов (#, &, @) не допускается!';
   return (
     <BaseWrapperForm className="RegForm">
       <form className="RegForm__form">
@@ -113,7 +116,14 @@ export const RegistrationPage = () => {
           name="Пароль"
           className="RegForm__form_input"
           label="Пароль"
-          OuterComponent={<IconHint className="RegForm__form_outerIcon" />}
+          OuterComponent={
+            <IconHint
+              data-tooltip-id="password"
+              data-tooltip-place="right"
+              data-tooltip-html={tooltipText}
+              className="IconHint"
+            />
+          }
           onInput={handlerInput}
           onBlur={handlerBlure}
           helperText={errorText.errorPassword}
