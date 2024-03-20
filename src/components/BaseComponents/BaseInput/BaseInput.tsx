@@ -1,6 +1,7 @@
 import React, { useId, forwardRef } from 'react';
 import cn from 'classnames';
 import './style.css';
+import { Tooltip } from 'react-tooltip';
 export interface BaseInputProps {
   value?: string;
   isError?: boolean;
@@ -52,6 +53,11 @@ export const BaseInput = forwardRef<HTMLInputElement, BaseInputProps>(
           </div>
           <div className="BaseInput_WrapOuterComponent">
             {props.OuterComponent}
+            <Tooltip
+              style={{ width: '200px' }}
+              id="password"
+              className="prompt"
+            />
           </div>
         </div>
 
