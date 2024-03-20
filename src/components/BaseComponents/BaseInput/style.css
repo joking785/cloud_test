@@ -45,7 +45,7 @@
   right: -40px;
   top: 50%;
   transform: translateY(-50%);
-  color: #ffffff;
+  color: white;
   width: 24px;
   height: 24px;
 }
@@ -55,8 +55,4 @@
   color: red;
   margin-top: 4px;
   margin-bottom: 4px;
-}
-
-.BaseButton {
-  color: #8b8c8e;
 }

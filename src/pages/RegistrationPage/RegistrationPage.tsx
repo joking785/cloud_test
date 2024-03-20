@@ -88,6 +88,8 @@ export const RegistrationPage = () => {
     // chekBlure(e);
   };
 
+  const tooltipText =
+    'Пароль должен содержать от 8 до 20 символов. <br /> Только латинские буквы. <br /> Использования символов (#, &, @) не допускается!';
   return (
     <BaseWrapperForm className="RegForm">
       <form className="RegForm__form">
@@ -118,7 +120,8 @@ export const RegistrationPage = () => {
             <IconHint
               data-tooltip-id="password"
               data-tooltip-place="right"
-              data-tooltip-html="Пароль должен содержать от 8 до 20 символов. <br /> Только латинские буквы. <br /> Использования символов (#, &, @) не допускается!"
+              data-tooltip-html={tooltipText}
+              className="IconHint"
             />
           }
           onInput={handlerInput}

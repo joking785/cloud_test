@@ -66,6 +66,8 @@ export const ResetPasswordPage = () => {
         break;
     }
   };
+  const tooltipText =
+    'Пароль должен содержать от 8 до 20 символов. <br /> Только латинские буквы. <br /> Использования символов (#, &, @) не допускается!';
   return (
     <BaseWrapperForm className="ResetForm">
       <form className="ResetForm__form">
@@ -87,7 +89,8 @@ export const ResetPasswordPage = () => {
             <IconHint
               data-tooltip-id="password"
               data-tooltip-place="right"
-              data-tooltip-html="Пароль должен содержать от 8 до 20 символов. <br /> Только латинские буквы. <br /> Использования символов (#, &, @) не допускается!"
+              data-tooltip-html={tooltipText}
+              className="IconHint"
             />
           }
           onInput={hundlerImput}
@@ -103,7 +106,8 @@ export const ResetPasswordPage = () => {
             <IconHint
               data-tooltip-id="password"
               data-tooltip-place="right"
-              data-tooltip-html="Пароль должен содержать от 8 до 20 символов. <br /> Только латинские буквы. <br /> Использования символов (#, &, @) не допускается!"
+              data-tooltip-html={tooltipText}
+              className="IconHint"
             />
           }
           onInput={hundlerImput}
